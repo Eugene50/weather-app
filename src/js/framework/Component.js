@@ -8,10 +8,19 @@ export default class Component {
       const content = this.render();
       
       if(typeof content === 'string'){
-         this.host === content;
+         this.host.innerHTML = content;
       } else {
-         alert('Sorry, but something wrong');
+         content.map(item => {
+            if(typeof item === "string"){
+               const htmlElemnt = document.createElement("div");
+               htmlElemnt.innerHTML = item;
+               return htmlElemnt;
+            } else {
+               return item;
+            }
+         }).forEach(htmlElement => {
+            this.host.appendChild(htmlElement);
+         });
       }
-
    }
 }
