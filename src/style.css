@@ -1,0 +1,28 @@
+@import 'normalize.css';
+
+
+* {
+   margin: 5px;
+}
+.common-container {
+   border: solid 2px green;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.header {
+   border: solid 2px red;
+   width: 100%;
+}
+
+.current-weather {
+   border: solid 2px yellow;
+   width: 38%;
+   height: 200px;
+}
+
+.forecast {
+   border: solid 2px pink;
+   width: 59%;
+   height: 200px;
+}
