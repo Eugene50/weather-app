@@ -1,9 +1,12 @@
-/* import Component from "../../framework/Component";
+import rain from "../../../img/rain.png";
 
- export default class Temperature extends Component {
+import Component from "../../framework/Component";
 
-   render() {
-      return this.props.temperature + "&deg" + this.props.unit;
-   }
- }
- */
+export default class CurrentWeather extends Component {
+  render() {
+    const txt = "I`m CurrentWeather component";
+    //const img = new Image();
+    //img.src = rain;
+    return [/* img, */ txt];
+  }
+}

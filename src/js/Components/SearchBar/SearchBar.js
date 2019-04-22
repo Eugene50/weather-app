@@ -1,9 +1,7 @@
-/* import Component from "../../framework/Component";
+import Component from "../../framework/Component";
 
- export default class Temperature extends Component {
-
-   render() {
-      return this.props.temperature + "&deg" + this.props.unit;
-   }
- }
- */
+export default class SearchBar extends Component {
+  render() {
+    return "I`m SearchBar component";
+  }
+}
