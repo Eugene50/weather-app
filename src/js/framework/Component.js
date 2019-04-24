@@ -25,14 +25,14 @@ export default class Component {
       htmlElemnt.innerHTML = element;
       return htmlElemnt;
     } else {
-      if (typeof element.tag === "function") {
-        const container = document.createElement("div");
-        new element.tag(container, element.props);
-        return container;
+      if (element.tag) {
+        if (typeof element.tag === "function") {
+          const container = document.createElement("div");
+          new element.tag(container, element.props);
+          return container;
+        }
       }
       return element;
     }
   }
 }
-
-
