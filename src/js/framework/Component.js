@@ -30,6 +30,16 @@ export default class Component {
           const container = document.createElement("div");
           new element.tag(container, element.props);
           return container;
+        } else {
+          //string 
+          const container = document.createElement(element.tag);
+          if (element.content) {
+            container.innerHTML = element.content;
+          }
+          if (element.classList) {
+            container.classList.add(...element.classList);
+          }
+          return container;
         }
       }
       return element;
