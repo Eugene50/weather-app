@@ -8,27 +8,44 @@ export default class App extends Component {
     const curentWeather = document.createElement("div");
     new CurrentWeather(curentWeather);
 
-    /* const searchBar = document.createElement("div");
-    new SearchBar(searchBar, {search: 'Kiev', loc:'north'});
-
-    const temperature = document.createElement("div");
-    new Temperature(temperature); */
-
-    return [curentWeather, 
+    return [
+      curentWeather,
       {
         tag: Temperature,
         props: {
           temperature: 12,
-          unit: "C",
+          unit: "C"
         }
-    }, 
+      },
       {
         tag: SearchBar,
         props: {
-          search: 'Kiev',
-          location:'north'
+          search: "Kiev",
+          location: "north"
         }
-    }];
+      },
+      {
+        tag: "div",
+        content: "header",
+        classList: ["header"],
+        attributes: [
+          {
+            name: "title",
+            value: "Header"
+          }
+        ]
+      },
+      {
+        tag: "div",
+        content: "current-weather",
+        classList: ["current-weather"]
+      },
+      {
+        tag: "div",
+        content: "forecast",
+        classList: ["forecast"]
+      }
+    ];
   }
 }
 
