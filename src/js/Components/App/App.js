@@ -2,49 +2,23 @@ import { CurrentWeather } from "../CurrentWeather";
 import Component from "../../framework/Component";
 import { Temperature } from "../Temperature";
 import { SearchBar } from "../SearchBar";
+import {WeatherForecast} from "../WeatherForecast";
 
 export default class App extends Component {
   render() {
-    const curentWeather = document.createElement("div");
-    new CurrentWeather(curentWeather);
-
     return [
-      curentWeather,
-      {
-        tag: Temperature,
-        props: {
-          temperature: 12,
-          unit: "C"
-        }
-      },
       {
         tag: SearchBar,
-        props: {
-          search: "Kiev",
-          location: "north"
-        }
-      },
-      {
-        tag: "div",
-        content: "header",
         classList: ["header"],
-        attributes: [
-          {
-            name: "title",
-            value: "Header"
-          }
-        ]
       },
       {
-        tag: "div",
-        content: "current-weather",
-        classList: ["current-weather"]
+        tag: CurrentWeather,
+        classList: ["current-weather"],
       },
       {
-        tag: "div",
-        content: "forecast",
-        classList: ["forecast"]
-      }
+        tag: WeatherForecast,
+        classList: ["weather-forecast"],
+      },
     ];
   }
 }
