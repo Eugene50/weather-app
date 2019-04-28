@@ -1,4 +1,5 @@
-import {App} from './Components/App/';
+//application start point
 
-new App (document.getElementById('app'));
+import { App } from "./Components/App/";
 
+new App(document.getElementById("app"));
