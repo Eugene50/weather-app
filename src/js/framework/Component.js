@@ -12,7 +12,7 @@ export default class Component {
       this.host.innerHTML = content;
     } else {
       content
-        .map(this._vDomPrototypeElementToHtmlElement)
+        .map(item => this._vDomPrototypeElementToHtmlElement(item))
         .forEach(htmlElement => {
           this.host.appendChild(htmlElement);
         });
@@ -31,13 +31,19 @@ export default class Component {
           new element.tag(container, element.props);
           return container;
         } else {
-          //string 
+          //string
           const container = document.createElement(element.tag);
           if (element.content) {
             container.innerHTML = element.content;
           }
           if (element.classList) {
             container.classList.add(...element.classList);
+          }
+          if (element.children) {
+            element.children.forEach(el => {
+              const htmlElement = this._vDomPrototypeElementToHtmlElement(el);
+              container.appendChild(htmlElement);
+            });
           }
           return container;
         }
