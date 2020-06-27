@@ -1,7 +1,7 @@
 import { commonWeatherData } from "../Services/api.js";
 
 class WeatherDataService {
-  constructor(props){
+  constructor(props = []) {
     this.props = props;
   }
 
@@ -14,12 +14,11 @@ class WeatherDataService {
           }
         })
         .map((item) => {
-          return this.props =  item.temp;
+          return (this.props = item.temp);
         });
-    })
+    });
     //тут идет выборка ветер, температура, влажность итдю
   }
-
 
   getWeatherForecast() {}
 }
