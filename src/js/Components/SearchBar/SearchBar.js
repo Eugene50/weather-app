@@ -10,10 +10,12 @@ export default class SearchBar extends Component {
         {
           tag: "button",
           classList: ["button"],
+          content: "Celcium",
         },
         {
           tag: "button",
           classList: ["button"],
+          content: "Farenheit",
         },
         {
           tag: "input",
@@ -23,6 +25,7 @@ export default class SearchBar extends Component {
         {
           tag: "button",
           classList: ["search-btn", "button"],
+          content: "Search",
           attributes: [
             {
               name: "name",
