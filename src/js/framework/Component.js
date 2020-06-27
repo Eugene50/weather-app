@@ -1,12 +1,12 @@
 export default class Component {
   constructor(host, props = {}) {
-    this.host = host;
+    this.host = host;   // запомнили хост, чтобы компоненты могли его передавать
     this.props = props;
-    this._render();
+    this._render();      //метод класса 
   }
   _render() {
     this.host.innerHTML = "";
-    const content = this.render();
+    const content = this.render();  // метод который есть у компоненты
 
     if (typeof content === "string") {
       this.host.innerHTML = content;
@@ -67,5 +67,5 @@ export default class Component {
       }
       return element;
     }
-  }
+  };
 }
